@@ -1,2 +1,2 @@
-# TwitterFollowerCounter
-A tool for counting twitter follower on a regular basis.
+# TwitterFollowersCounter
+A tool for counting Twitter followers on a regular basis.
