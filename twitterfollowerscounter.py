@@ -3,6 +3,7 @@ import argparse
 import logging
 import sys
 import os
+import datetime
 import tweepy
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "utils")
 from utils.file_manager import FileManager
@@ -12,14 +13,26 @@ log_handler.setFormatter(logging.Formatter('[%(asctime)s][%(levelname)s] %(messa
 logger = logging.getLogger(__name__)
 logger.addHandler(log_handler)
 
-def record_the_number_of_followers(args, logging_level):
-    file_manager = FileManager(logging_level)
+def record_the_number_of_followers(args):
+    file_manager = FileManager()
     config_dict = file_manager.get_json_dict_from_json(os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json"))
     logger.debug(config_dict)
 
     auth = tweepy.OAuthHandler(config_dict["twitter_api"]["consumer_key"], config_dict["twitter_api"]["consumer_secret"])
     auth.set_access_token(config_dict["twitter_api"]["access_token"], config_dict["twitter_api"]["access_token_secret"])
-    api = tweepy.API(auth)
+    twitter_api = tweepy.API(auth)
+
+    for screen_name in args.target_screen_name:
+        try:
+            user_dict = twitter_api.get_user(screen_name=screen_name)
+            #logger.debug(user_dict._json)
+            datetime_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            followers_count = str(user_dict._json["followers_count"])
+            friends_count = str(user_dict._json["friends_count"])
+            directory_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "result")
+            file_manager.update_csv_file(directory_path, screen_name, datetime_str, friends_count, followers_count)
+        except Exception as e:
+            logger.error("screen_name: %s, log: %s" % (screen_name, e))
 
 if __name__ == "__main__":
     arg_parser = argparse.ArgumentParser()
@@ -36,7 +49,7 @@ if __name__ == "__main__":
     logger.setLevel(logging_level)
 
     if args.command == "record_the_number_of_followers":
-        record_the_number_of_followers(args, logging_level)
+        record_the_number_of_followers(args)
     else:
         logger.critical("%s is invalid command!!" % args.command)
         sys.exit(1)
