@@ -22,7 +22,15 @@ $ pip install tweepy
 
 # Usage
 ```
-TODO: write something here
+usage: twitterfollowerscounter.py [-h] [-q] command [target_screen_name [target_screen_name ...]]
+
+positional arguments:
+  command             the command you want to run
+  target_screen_name  screen name of the target name
+
+optional arguments:
+  -h, --help          show this help message and exit
+  -q, --quiet         do not output log
 ```
 
 ## Commands
