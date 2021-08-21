@@ -1,9 +1,9 @@
 # TwitterFollowersCounter
-A tool for counting Twitter followers and recording as CVS file on a regular basis.
+A tool for counting the number of Twitter friends and followers and recording as CVS file on a regular basis.
 
 ## Features
 This tool can:  
-* retrieve the number of followers using Twitter API.  
+* retrieve the number of friends and followers using Twitter API.  
 * record them as CSV file on a regulary basis using cron.  
 
 # Installation
@@ -34,10 +34,16 @@ optional arguments:
 ```
 
 ## Commands
-| command name                   | description                                                                                         |
-|--------------------------------|-----------------------------------------------------------------------------------------------------|
-| record_the_number_of_followers | retrieve the number of followers of any user specified by the arguments and record them as CSV file |
+| Command Name | Description |
+|--------------|-------------|
+| record       | - Retrieve the number of friends and followers of any user specified by the arguments and record them as CSV file.<br>- The CSV files will be saved as `(this project directory)/results/(screen_name).csv`.<br>- The CSV format is `"datetime, friends_count, followers_count"`. |
 
+# Sample
+If you want to record the number of friends and followers of [@Cristiano (Cristiano Ronaldo)](https://twitter.com/cristiano) and [@BarackObama (Barack Obama)](https://twitter.com/barackobama).  
+```console
+$ python record Cristiano BarackObama
+```
+The CSV files will be in `(this project directory)/results/`.  
 
 # License
 ```
