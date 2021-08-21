@@ -4,7 +4,7 @@ A tool for counting Twitter followers and recording as CVS file on a regular bas
 ## Features
 This tool can:  
 * retrieve the number of followers using Twitter API.  
-* record it as CSV file on a regulary basis using cron.  
+* record them as CSV file on a regulary basis using cron.  
 
 # Installation
 Just clone this and start using it.  
