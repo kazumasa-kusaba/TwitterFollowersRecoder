@@ -13,7 +13,7 @@ log_handler.setFormatter(logging.Formatter('[%(asctime)s][%(levelname)s] %(messa
 logger = logging.getLogger(__name__)
 logger.addHandler(log_handler)
 
-def record_the_number_of_followers(args):
+def record(args):
     file_manager = FileManager()
     config_dict = file_manager.get_json_dict_from_json(os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json"))
     logger.debug(config_dict)
@@ -48,8 +48,8 @@ if __name__ == "__main__":
         logging_level = logging.CRITICAL
     logger.setLevel(logging_level)
 
-    if args.command == "record_the_number_of_followers":
-        record_the_number_of_followers(args)
+    if args.command == "record":
+        record(args)
     else:
         logger.critical("%s is invalid command!!" % args.command)
         sys.exit(1)
