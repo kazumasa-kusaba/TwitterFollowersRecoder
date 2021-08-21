@@ -24,6 +24,7 @@ def record(args):
 
     for screen_name in args.target_screen_name:
         try:
+            logger.info("Processing \"%s\" ..." % screen_name)
             user_dict = twitter_api.get_user(screen_name=screen_name)
             #logger.debug(user_dict._json)
             datetime_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -42,8 +43,7 @@ if __name__ == "__main__":
     args = arg_parser.parse_args()
 
     # set logging configuration
-    # TODO: change the log level to INFO later
-    logging_level = logging.DEBUG
+    logging_level = logging.INFO
     if args.quiet == True:
         logging_level = logging.CRITICAL
     logger.setLevel(logging_level)
