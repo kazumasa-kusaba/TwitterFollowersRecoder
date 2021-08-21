@@ -1,5 +1,5 @@
 # TwitterFollowersRecorder
-A tool for counting the number of Twitter friends and followers and recording as CVS file on a regular basis.
+A tool for recording the number of Twitter friends and followers and recording as CVS file on a regular basis.
 
 ## Features
 This tool can:  
