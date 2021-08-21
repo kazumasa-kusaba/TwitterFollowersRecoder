@@ -1,9 +1,9 @@
 # TwitterFollowersCounter
-A tool for counting Twitter followers on a regular basis.
+A tool for counting Twitter followers and recording as CVS file on a regular basis.
 
 ## Features
 This tool can:  
-* get the number of followers using Twitter API.  
+* retrieve the number of followers using Twitter API.  
 * record it as CSV file on a regulary basis using cron.  
 
 # Installation
@@ -14,12 +14,22 @@ git clone https://github.com/kazumasa-kusaba/TwitterFollowersCounter.git
 
 ## Dependencies
 * [tweepy](https://github.com/tweepy/tweepy)
+  
+Just do:  
 ```console
 $ pip install tweepy
 ```
 
 # Usage
+```
 TODO: write something here
+```
+
+## Commands
+| command name                   | description                                                                                         |
+|--------------------------------|-----------------------------------------------------------------------------------------------------|
+| record_the_number_of_followers | retrieve the number of followers of any user specified by the arguments and record them as CSV file |
+
 
 # License
 ```
