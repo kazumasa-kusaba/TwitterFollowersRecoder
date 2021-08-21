@@ -11,7 +11,7 @@ class FileManager():
         self.logger.addHandler(log_handler)
         self.logger.setLevel(logging_level)
     
-    def get_json_dicts(self, json_file_path):
+    def get_json_dict_from_json(self, json_file_path):
         data = self.__read_file(json_file_path)
         json_dicts = json.loads(data)
         return json_dicts

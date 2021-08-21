@@ -3,6 +3,7 @@ import argparse
 import logging
 import sys
 import os
+import tweepy
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "utils")
 from utils.file_manager import FileManager
 
@@ -12,7 +13,9 @@ logger = logging.getLogger(__name__)
 logger.addHandler(log_handler)
 
 def record_the_number_of_followers(args, logging_level):
-    pass
+    file_manager = FileManager(logging_level)
+    config_dict = file_manager.get_json_dict_from_json(os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json"))
+    logger.debug(config_dict)
 
 if __name__ == "__main__":
     arg_parser = argparse.ArgumentParser()
@@ -22,7 +25,8 @@ if __name__ == "__main__":
     args = arg_parser.parse_args()
 
     # set logging configuration
-    logging_level = logging.INFO
+    # TODO: change the log level to INFO later
+    logging_level = logging.DEBUG
     if args.quiet == True:
         logging_level = logging.CRITICAL
     logger.setLevel(logging_level)
