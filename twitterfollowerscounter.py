@@ -29,7 +29,7 @@ def record_the_number_of_followers(args):
             datetime_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             followers_count = str(user_dict._json["followers_count"])
             friends_count = str(user_dict._json["friends_count"])
-            directory_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "result")
+            directory_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
             file_manager.update_csv_file(directory_path, screen_name, datetime_str, friends_count, followers_count)
         except Exception as e:
             logger.error("screen_name: %s, log: %s" % (screen_name, e))
