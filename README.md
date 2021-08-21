@@ -36,7 +36,7 @@ optional arguments:
 ## Commands
 | Command Name | Description |
 |--------------|-------------|
-| record       | - Retrieve the number of friends and followers of any user specified by the arguments and record them as CSV file.<br>- The CSV files will be saved in `/result` direcotry.<br>- The CSV format is `"datetime, friends_count, followers_count"`. |
+| record       | - Retrieve the number of friends and followers of any user specified by the arguments and record them as CSV file.<br>- The CSV files will be saved as `(this project directory)/result/(screen_name).csv`.<br>- The CSV format is `"datetime, friends_count, followers_count"`. |
 
 # License
 ```
