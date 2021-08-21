@@ -36,7 +36,7 @@ And replace each preset values with your Twitter access token information.
 
 # Usage
 ```
-usage: TwitterFollowersRecorder.py [-h] [-q] command [target_screen_name [target_screen_name ...]]
+usage: twitterfollowersrecorder.py [-h] [-q] command [target_screen_name [target_screen_name ...]]
 
 positional arguments:
   command             the command you want to run
@@ -55,7 +55,7 @@ optional arguments:
 # Sample
 If you want to record the number of friends and followers of [@Cristiano (Cristiano Ronaldo)](https://twitter.com/cristiano) and [@BarackObama (Barack Obama)](https://twitter.com/barackobama).  
 ```console
-$ python record Cristiano BarackObama
+$ python twitterfollowersrecorder.py record Cristiano BarackObama
 ```
 The CSV files will be in `(this project directory)/results/`.  
 
