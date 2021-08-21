@@ -17,6 +17,10 @@ def record_the_number_of_followers(args, logging_level):
     config_dict = file_manager.get_json_dict_from_json(os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json"))
     logger.debug(config_dict)
 
+    auth = tweepy.OAuthHandler(config_dict["twitter_api"]["consumer_key"], config_dict["twitter_api"]["consumer_secret"])
+    auth.set_access_token(config_dict["twitter_api"]["access_token"], config_dict["twitter_api"]["access_token_secret"])
+    api = tweepy.API(auth)
+
 if __name__ == "__main__":
     arg_parser = argparse.ArgumentParser()
     arg_parser.add_argument("command", help="the command you want to run")
