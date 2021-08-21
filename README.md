@@ -20,6 +20,20 @@ Just do:
 $ pip install tweepy
 ```
 
+## Write your access token infomation
+Copy `/docs/config.json` to this project's root directory.  
+And replace each preset values with your Twitter access token information.  
+```json
+{
+    "twitter_api": {
+        "access_token": "ACCESS_TOKEN",
+        "access_token_secret": "ACCESS_TOKEN_SECRET",
+        "consumer_key": "CONSUMER_KEY",
+        "consumer_secret": "CONSUMER_SECRET"
+    }
+}
+```
+
 # Usage
 ```
 usage: twitterfollowerscounter.py [-h] [-q] command [target_screen_name [target_screen_name ...]]
