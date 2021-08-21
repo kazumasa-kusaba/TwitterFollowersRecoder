@@ -1,4 +1,4 @@
-# TwitterFollowersCounter
+# TwitterFollowersRecorder
 A tool for counting the number of Twitter friends and followers and recording as CVS file on a regular basis.
 
 ## Features
@@ -9,7 +9,7 @@ This tool can:
 # Installation
 Just clone this and start using it.  
 ```console
-git clone https://github.com/kazumasa-kusaba/TwitterFollowersCounter.git
+git clone https://github.com/kazumasa-kusaba/TwitterFollowersRecorder.git
 ```
 
 ## Dependencies
@@ -36,7 +36,7 @@ And replace each preset values with your Twitter access token information.
 
 # Usage
 ```
-usage: twitterfollowerscounter.py [-h] [-q] command [target_screen_name [target_screen_name ...]]
+usage: TwitterFollowersRecorder.py [-h] [-q] command [target_screen_name [target_screen_name ...]]
 
 positional arguments:
   command             the command you want to run
